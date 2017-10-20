@@ -46,9 +46,238 @@ body
 	overflow-x: hidden
 	opacity: 1
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
+
+.blocks
+	max-width: 844px
+	margin: 40px auto
+	// border-top: 1px solid #E2E2E2
+	.block.active
+		box-shadow: inset 0 0 0 2px #2C99C9
+		&:before
+			color: #2C99C9
+		.block__wrap .block__title .description
+			color: #2B9CC6
+			&:before
+				background: #2D9ACA
+	.block
+		max-width: 844px
+		height: auto
+		display: block
+		border-top: none
+		background: white
+		border: 1px solid #E2E2E2
+		overflow: hidden
+		position: relative
+		transition: all .35s ease
+		&:hover 
+			box-shadow: inset 0 0 0 2px #2C99C9
+			&:before
+				color: #2C99C9 
+				transition: all .35s ease .35s
+		&:before
+			content: "\f097"
+			font-family: "FontAwesome"
+			position: absolute
+			top: 0px
+			right: 11px
+			font-size: 21px
+			color: #D9D9D9
+			transition: all .35s ease 0s
+		.block__wrap
+			height: 91px
+			.block__img
+				width: 162px
+				height: auto
+				border-right: 1px dashed #E2E2E2
+				float: left
+				margin-right: 20px
+				img
+					margin-top: 9px
+					margin-left: 5px
+			.block__title.block__width
+				border-right: 1px dashed red
+			.block__title
+				width: 306px
+				margin-right: 20px
+				height: auto
+				float: left
+				border-right: 1px dashed #E2E2E2
+				.title
+					color: #6A6A6A
+					font-size: 15px
+					line-height: 17px
+					&:hover
+						color: #2D99CC
+						cursor: pointer 
+				.description
+					font-size: 12px
+					color: #959595
+					text-decoration: underline
+					margin-left: 30px
+					width: 60px
+					position: relative
+					transition: all .35s ease
+					cursor: pointer
+					&:hover 
+						color: #2B9CC6
+						&:before
+							background: #2D9ACA
+					&:before
+						content: ''
+						width: 21px
+						height: 21px
+						background: #ddd
+						display: block
+						border-radius: 4px
+						position: absolute
+						left: -30px
+						transition: all .35s ease
+					&:after
+						content: ''
+						position: absolute
+						background: url("../img/info.png") center no-repeat
+						width: 16px
+						height: 16px
+						left: -28px
+						top: 2px
+			.block__btn.active__btn
+				padding-left: 0
+				.blue
+					color: white
+					width: 134px
+					height: 52px
+					line-height: 52px
+					text-align: center
+					transition: width .35s ease .1s
+					&:before
+						display: none
+						transition: display 1s ease 1s
+					&:after
+						content: attr(data-title)
+						display: block
+						opacity: 1
+						transition: display .35s ease, content .5s ease .5s
+				.gray
+					margin-left: -2px
+						
+			.block__btn
+				width: 334px
+				height: auto
+				float: left
+				padding-left: 90px
+				padding-top: 20px
+				.gray
+					color: #818181
+					background: #ECECEC
+					text-transform: uppercase
+					font-size: 13px
+					font-weight: bold
+					width: 134px
+					height: 52px
+					margin-left: -10px
+					line-height: 52px
+					text-align: center
+					display: block
+					float: left
+					transition: all .35s ease
+					&:hover
+						box-shadow: inset 0 0 4px #999
+				.blue
+					width: 52px
+					height: 52px
+					display: block
+					float: left
+					margin-left: 20px
+					background: #2D99CC
+					position: relative
+					&:hover
+						box-shadow: inset 0 0 4px #666
+					&:before
+						content: ''
+						background: url("../img/basket.png") center no-repeat
+						width: 32px
+						height: 32px
+						display: block
+						margin-left: 7px
+						margin-top: 10px
+
+	.block__hidden.visible
+		display: block
+	.block__hidden
+		border-top: 1px solid #E6E6E6
+		width: auto
+		height: 100px
+		display: none
+		padding: 20px 0
+		margin: 0 20px
+		margin-top: 12px
+		.hidden__formats
+			float: left
+			margin-right: 30px
+			margin-top: 10px
+			width: 165px
+			height: auto
+			border-right: 1px dashed #E2E2E2
+			span 
+				background: #CACACA
+				color: white
+				padding: 0 4px
+				border-radius: 3px
+				text-transform: uppercase
+				font-size: 16px
+				letter-spacing: .4px
+				margin-right: 15px
+				cursor: pointer
+			span.active
+				background: #0088C9
+		.hidden__thermometer
+			width: 140px
+		.hidden__guarantees
+			width: 240px
+			padding-left: 30px
+		.hidden__thermometer,
+		.hidden__guarantees
+			height: auto
+			float: left
+			border-right: 1px dashed #E2E2E2
+			margin-top: 10px
+			font-size: 12px
+			color: #0088C9
+			img
+				margin-right: 10px
+		.hidden__pdf
+			float: left
+			.pdf__link
+				font-size: 12px
+				line-height: 12px
+				color: #0088C9
+				float: left
+				margin: 35px 2px 0 2px
+				text-align: center
+				text-decoration: underline
+				width: 70px
+				position: relative
+				&:before
+					content: ''
+					background: url("../img/pdf.png") center no-repeat
+					width: 32px
+					height: 31px
+					left: 50%
+					top: -35px
+					margin-left: -12px
+					display: block
+					position: absolute
+					transition: all .4s ease
+				&:hover:before
+					background: url("../img/pdf-hover.png") center no-repeat
+					transition: all .4s ease
+
+			
+.hidden-block
+	opacity: 0
+.visible
+	opacity: 1
+
+
 
 @import "media" // Всегда в конце
